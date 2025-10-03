@@ -21,9 +21,14 @@
 } 
 
 
+body{
+    margin-top: -80px;
+}
+
 h1{
     color: red;
     text-align: center;
+    margin-bottom: 45px;
 }
 
 .form_main{
@@ -34,6 +39,7 @@ h1{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 80px;
 }
 
 .form_main input, .form_main select{
