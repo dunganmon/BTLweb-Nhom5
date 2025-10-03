@@ -1,0 +1,104 @@
+/* Mobile nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .form_main {
+   margin: 0 5%;       /* thu margin lại để có khoảng trống hai bên */
+   width: 90%;         /* form chiếm 90% chiều ngang */
+   max-width: none;    /* bỏ giới hạn 900px */
+   }
+
+   .form_main input,
+  .form_main select,
+  .form_main p {
+    width: 100%;        /* input, select full chiều ngang */
+}
+}
+
+/* Màn hình cực nhỏ (như điện thoại <480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px; /* nhỏ lại để vừa màn */
+  }
+} 
+
+
+h1{
+    color: red;
+    text-align: center;
+}
+
+.form_main{
+    margin: 0 20% 0 20%;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form_main input, .form_main select{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 99.5%;
+    border-radius: 10px;  /*bo căn góc mềm mại*/
+}
+
+.form_main select{
+    width: 99.5%;
+}
+
+.form_main p{
+    background-color: rgb(234, 242, 242);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 99.5%;
+}
+
+.form_main button {
+    width: 100%;
+    padding: 15px;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    cursor: pointer; /*di chuột vào sẽ hiện biểu tượng bàn tay*/
+}
+
+.form_main button:hover {
+    background: darkred;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* khoảng cách giữa ô và chữ */
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-group label {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.form_end{
+    display: flex;
+    flex-direction: row;
+}
+
+.form_end .thongbao{
+    margin: 20px;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: red;
+}
