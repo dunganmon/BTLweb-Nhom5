@@ -1,6 +1,6 @@
 
 # BTLweb-Nhom5
-Bài tập lớn web nhóm 5: Quản lý nhà hàng 
+Bài tập lớn web nhóm 5: Quản lý cửa hàng gà rán
 
 Hướng dẫn đóng góp dự án
 1. Clone repository: Clone dự án từ repository bằng lệnh:
