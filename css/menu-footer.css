@@ -258,7 +258,7 @@ footer ul li a:hover {
     }
 }
 @media screen and (max-width: 1120px) {
- 
+    
 }
 @media screen and (max-width: 800px) {
     .footer-container {
@@ -275,6 +275,5 @@ footer ul li a:hover {
     .footer-center {
         margin-top: 20px;
     }
-    
     
 }
