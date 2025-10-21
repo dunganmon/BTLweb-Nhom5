@@ -123,6 +123,7 @@ nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 999;
     border-radius: 0 0 30px 30px;
+
 }
 
 .dropdown-content {
@@ -226,7 +227,7 @@ footer ul li a:hover {
     margin-bottom: 10px;
 }
 
-.footer-right > a {
+.footer-right>a {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 15px;
@@ -257,9 +258,9 @@ footer ul li a:hover {
         height: auto;
     }
 }
-@media screen and (max-width: 1120px) {
- 
-}
+
+@media screen and (max-width: 1120px) {}
+
 @media screen and (max-width: 800px) {
     .footer-container {
         display: flex;
@@ -267,14 +268,15 @@ footer ul li a:hover {
         gap: 10px;
         margin-left: 20px;
     }
+
     .footer-logo {
-         display: flex;
-         justify-content: center;
-         
+        display: flex;
+        justify-content: center;
+
     }
+
     .footer-center {
         margin-top: 20px;
     }
-    
-    
 }
+
