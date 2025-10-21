@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BTLWEB - Nhóm 5</title>
     <link rel="stylesheet" href="css/menu-footer.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -85,6 +86,132 @@
         </ul>
     </nav>
     <!-- Kết thúc navbar -->
+
+    <!--Bắt đầu carosel-->
+    <div class="carousel">
+      <div class="slides">
+        <img src="images/carosel/banner_miy.jpg" class="slide active" alt="Combo Sinh Nhật" />
+        <img src="images/carosel/banner_couple.jpg" class="slide" alt="Couple" />
+        <img src="images/carosel/banner_gasotcay.jpg" class="slide" alt="Gà Sốt Cay" />
+        <img src="images/carosel/bannner_garonvuive.jpg" class="slide" alt="Mỳ Ý" />
+        <img src="images/carosel/banner_miy.jpg" class="slide" alt="Tiệc Sinh Nhật" />
+        <img src="images/carosel/banner_couple.jpg" class="slide" alt="Gà Ròn Vui Vẻ" />
+      </div>
+
+      <div class="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+      </div>
+    </div>
+    <!--Kết thúc carousel-->
+    
+    <!--Hôm nay ăn gì-->
+    <section class="today-menu">
+      <div class="menu-intro">
+        <img src="images/logo-icon/logo-junlly.png" class="today-menu-logo" />
+        <h2>ĂN GÌ HÔM NAY</h2>
+        <p>
+          Thực đơn Junlly đa dạng và phong phú, có rất nhiều sự lựa chọn cho bạn, gia đình và bạn bè.
+        </p>
+      </div>
+
+      <div class="menu-items">
+        <a class="menu-card" href="#">
+          <img src="images/today-menu/ga_gion_vui_ve.png">
+          <p class="menu-title">Gà giòn vui vẻ</p>
+        </a>
+
+        <a class="menu-card" href="#">
+          <img src="images/today-menu/ga_sot_cay.png">
+          <p class="menu-title">Gà sốt cay</p>
+        </a>
+
+        <a class="menu-card" href="#">
+          <img src="images/today-menu/my_y_sot_bo_bam.png">
+          <p class="menu-title">Mỳ Ý sốt bò bằm</p>
+        </a>
+
+        <a class="menu-card" href="#">
+          <img src="images/today-menu/mon_trang_mieng.png">
+          <p class="menu-title">Món tráng miệng</p>
+        </a>
+      </div>
+    </section>
+    <!--Hôm nay ăn gì-->
+
+  
+    <!-- Phần giới thiệu Jollibee -->
+    <section class="intro-section">
+      <div class="intro-content">
+        <h2>JUNLLY, XIN CHÀO!</h2>
+        <p>
+          Chúng tôi là <strong>Junlly</strong> – một thương hiệu gà rán trẻ trung, ra đời
+          với mong muốn mang đến cho bạn những bữa ăn ngon miệng, ấm áp và tràn đầy
+          năng lượng.  
+          <br><br>
+          Dù chỉ mới có <strong>một cửa hàng nhỏ</strong>, nhưng mỗi món ăn tại Junlly đều được
+          chăm chút từ hương vị đến chất lượng, để mỗi lần bạn ghé qua đều cảm nhận
+          được sự tận tâm và niềm vui trọn vẹn trong từng phần ăn.
+        </p>
+        <a href="pages/menu.html" class="btn-order">ĐẶT HÀNG</a>
+      </div>
+    </section>
+    <!--Kết thúc giới thiệu-->
+    <hr>
+    <!-- Bắt đầu phần Tin tức -->
+    <section class="news-section">
+      <h2 class="news-title">TIN TỨC</h2>
+      <div class="news-container" id="news-container">
+
+        <div class="news-card">
+          <img src="images/news/img1.jpg" alt="Tin 1">
+          <h3>JUNLLY CHÍNH THỨC KHAI TRƯƠNG CỬA HÀNG ĐẦU TIÊN</h3>
+          <p>Ngày 15/07/2024, Junlly chính thức khai trương cửa hàng đầu tiên tại 132 Cầu Giấy, Hà Nội – đánh dấu bước khởi đầu đầy hứa hẹn.</p>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news/img2.jpg" alt="Tin 2">
+          <h3>KHÁCH HÀNG XẾP HÀNG DÀI TRONG NGÀY MỞ BÁN</h3>
+          <p>Không khí náo nhiệt và sự ủng hộ của đông đảo khách hàng khiến ngày khai trương trở nên đặc biệt hơn bao giờ hết.</p>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news/img3.jpg" alt="Tin 3">
+          <h3>CHƯƠNG TRÌNH ƯU ĐÃI MỪNG KHAI TRƯƠNG</h3>
+          <p>Junlly tung chương trình giảm giá 30% cho mọi combo trong tuần đầu tiên khai trương. Đừng bỏ lỡ nhé!</p>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news/img4.jpg" alt="Tin 4">
+          <h3>JUNLLY RA MẮT MÓN MỚI – GÀ SỐT MẬT ONG</h3>
+          <p>Món gà rán phủ sốt mật ong độc quyền – giòn tan, ngọt nhẹ, thơm lừng – được khách hàng yêu thích ngay từ lần đầu ra mắt.</p>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news/img5.jpg" alt="Tin 5">
+          <h3>ĐỘI NGŨ NHÂN VIÊN JUNLLY – NHIỆT HUYẾT VÀ TẬN TÂM</h3>
+          <p>Junlly tự hào sở hữu đội ngũ trẻ trung, tận tâm, luôn mang đến trải nghiệm tốt nhất cho khách hàng.</p>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news/img6.jpg" alt="Tin 6">
+          <h3>JUNLLY LAN TỎA NIỀM VUI QUA HOẠT ĐỘNG CỘNG ĐỒNG</h3>
+          <p>Junlly tổ chức tặng suất ăn miễn phí cho trẻ em khó khăn tại Hà Nội, góp phần lan tỏa yêu thương.</p>
+        </div>
+
+      </div>
+
+      <div class="news-btn-container">
+        <button id="toggleNewsBtn" class="btn-more">XEM THÊM</button>
+      </div>
+    </section>
+
+    <!-- Kết thúc phần Tin tức -->
+
     <!-- Bắt đầu footer -->
     <footer>
         <div class="footer-container">
@@ -137,6 +264,9 @@
         </div>
     </footer>
     <!-- Kết thúc footer -->
+     
+    <script src="js/main.js"></script>
+    <script src="js/news.js"></script>
 </body>
 
 </html>
