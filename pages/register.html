@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,234 +8,69 @@
   <link rel="stylesheet" href="/css/menu-footer.css">
   <title>Đăng ký</title>
 </head>
+
 <body>
-    <!-- Bắt đầu navbar -->
-    <div class="top-bar">
-        <div class="auth-links">
-            <a href="/pages/login.html">Đăng nhập</a>
-            <span class="auth-separator">/</span>
-            <a href="/pages/register.html">Đăng ký</a>
-        </div>
+ 
+  <div class="register-container">
+    <!-- Ảnh bên trái -->
+    <div class="register-left">
+      <img src="/images/Dangky_Dangnhap/Anh_Dky.png" alt="Banner đăng ký">
     </div>
 
-    <nav>
-        <div class="logo">
-            <img src="/images/logo-icon/logo-junlly.png" alt="logo">
-        </div>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="/pages/about.html">Về Junlly</a></li>
-            <li>
-                <a href="/pages/menu.html">Thực đơn</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-content">
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/monngonphaithu.png" alt="Món ngon phải thử">
-                                <span>Món ngon phải thử</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/gaRonVuiVe.png" alt="">
-                                <span>Gà ròn vui vẻ</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/miY.png" alt="">
-                                <span>Mỳ ý Junlly</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/gaSotCay.png" alt="">
-                                <span>Gà sốt cay</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/burgerVsCom.png" alt="">
-                                <span>Burger/Cơm</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/phananphu.png" alt="">
-                                <span>Phần ăn phụ</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/trangmieng.png" alt="">
-                                <span>Món tráng miệng</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="#">
-                                <img src="/images/nav-menu/thucuong.png" alt="">
-                                <span>Thức uống</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li><a href="/pages/promotions.html">Khuyến mãi</a></li>
-            <li><a href="/pages/contact.html">Liên hệ</a></li>
-        </ul>
-    </nav> 
-
-    
-  <div class="main">
-    <h1>ĐĂNG KÝ TÀI KHOẢN</h1>
-    <form class="form_main">
-      <div>
+    <!-- Form bên phải -->
+    <div class="register-right">
+      <h1>ĐĂNG KÝ TÀI KHOẢN</h1>
+      <form class="form_main">
         <input type="text" id="ho" name="ho" placeholder="Họ *">
-        <div id="HoError" style="color: orange; display: none;">
-          Họ không được để trống
-        </div>
-      </div>
-      
-      <div>
+        <div id="HoError" class="error">Họ không được để trống</div>
+
         <input type="text" id="name" name="name" placeholder="Tên *">
-        <div id="TenError" style="color: orange; display: none;">
-          Tên không được để trống
-        </div>          
-      </div>
+        <div id="TenError" class="error">Tên không được để trống</div>
 
-      <div>
         <input type="text" id="sdt" name="sdt" placeholder="Số điện thoại *">
-        <div id="PhoneError" style="color: orange; display: none;">
-          Số điện thoại không được để trống
-        </div>          
-      </div>
-      
-      <div>
-        <input type="text" id="mail" name="mail" placeholder="E-mail">
-        <div id="EmailError" style="color: orange; display: none;">
-          Email không được để trống
-        </div>          
-      </div>
+        <div id="PhoneError" class="error">Số điện thoại không được để trống</div>
 
-      <div>
+        <input type="text" id="mail" name="mail" placeholder="E-mail *">
+        <div id="EmailError" class="error">Email không được để trống</div>
+
         <input type="password" id="pass" name="pass" placeholder="Mật khẩu *">
         <p id="baomat">Độ bảo mật: Không</p>
-        <div id="PasswordError" style="color: orange; display: none;">
-          Mật khẩu không được để trống
-        </div>          
-      </div>
+        <div id="PasswordError" class="error">Mật khẩu không được để trống</div>
 
-      <div>
         <input type="password" id="xacnhan" name="xacnhan" placeholder="Xác nhận mật khẩu *">
-        <div id="ConfirmError" style="color: orange; display: none;">
-          Xác nhận mật khẩu không được để trống
-        </div>          
-      </div>
+        <div id="ConfirmError" class="error">Xác nhận mật khẩu không được để trống</div>
 
-      <div>
-        <select id="gender" name="gender" required>
-              <option value="" disabled selected>Chọn giới tính *</option>
-              <option value="male">Nam</option>
-              <option value="female">Nữ</option>
-              <option value="other">Khác</option>
-        </select> 
-        <div id="GenderError" style="color: orange; display: none;">
-          Bạn chưa chọn giới tính
-        </div>          
-      </div> 
-
-      <div class="checkbox-section">
-        <div class="checkbox-item">
-          <input type="checkbox" class="agree" id="agree1" name="agree1" required>
-          <label for="agree1">
-            Đồng ý với <a href="/chinh_sach/index.html" target="_blank">Chính sách, quy định chung</a>
-          </label>
+        <div class="checkbox-section">
+          <div class="checkbox-item">
+            <input type="checkbox" id="agree1" name="agree">
+            <label for="agree1">
+              Đồng ý với <a href="#">Chính sách, quy định chung</a>
+            </label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="agree2" name="agree">
+            <label for="agree2">
+              Đồng ý với <a href="#">Chính sách bảo mật thông tin</a>
+            </label>
+          </div>
+          <div id="AgreeError" class="error">Bạn chưa đồng ý với chính sách của chúng tôi</div>
         </div>
 
-        <div class="checkbox-item">
-          <input type="checkbox" class="agree" id="agree2" name="agree2" required>
-          <label for="agree2">
-            Đồng ý với <a href="/chinh_sach/index.html" target="_blank">Chính sách bảo mật thông tin</a>
-          </label>
+        <div class="checkbox-section_promo">
+          <input type="checkbox" id="promo" name="promo">
+          <label for="promo">Nhận chương trình khuyến mãi qua email</label>
         </div>
 
-        <div id="AgreeError" style="color: orange; display: none;">
-          Bạn chưa tích chấp thuận chính sách của chúng tôi
-        </div>
-      </div>
-
-      <div class="checkbox-section promo">
-        <input type="checkbox" id="promo" name="promo">
-        <label for="promo">Nhận chương trình khuyến mãi qua email</label>
-      </div>
- 
-      <div class="form_end">
-        <div>
+        <div class="form_end">
           <button class="submit">ĐĂNG KÝ</button>
+          <p class="thongbao">Bạn đã có tài khoản?
+            <a href="/pages/login.html">Đăng nhập</a>
+          </p>
         </div>
-
-        <div class="thongbao">
-          <label for="agree">
-            Bạn đã có tài khoản? <a href="/pages/login.html" target="_blank">Đăng nhập</a>
-          </label>
-        </div>
-      </div>   
-    </form>
+      </form>
+    </div>
   </div>
-
-          <!-- Bắt đầu footer -->
-      <footer>
-        <div class = "footer-container">
-            <div class="footer-logo">
-                <img src="/images/logo-icon/logo-junlly.png">
-            </div>
-       
-            <div class="footer-left">
-                
-                <p><strong>CỬA HÀNG GÀ RÁN JUNLLY</strong></p>
-                <p>Địa chỉ: 132 Cầu Giấy, Nghĩa Đô, Hà Nội</p>
-                <p>Điện thoại: 123456789</p>
-                <p>Tổng đài: <strong>1900-1533</strong></p>
-                <p>Mã số thuế: 0301234567</p>
-                <p>Ngày cấp: 15/07/2008 – Nơi cấp: Cục Thuế Hà Nội</p>
-            </div>
-
-            <div class="footer-center">
-                <ul>
-                    <li><a href="/BTLweb-Nhom5/pages/contact.html">Liên hệ</a></li>
-                    <li><a href="#">Chính sách và quy định chung</a></li>
-                    <li><a href="#">Chính sách thanh toán khi đặt hàng</a></li>
-                    <li><a href="#">Chính sách hoạt động</a></li>
-                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
-                    <li><a href="#">Chính sách cookie</a></li>
-                    <li><a href="#">Thông tin vận chuyển và giao nhận</a></li>
-                    <li><a href="#">Thông tin đăng ký giao dịch chung</a></li>
-                    <li><a href="#">Hướng dẫn đặt phần ăn</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-right">
-                <h4>Hãy kết nối với chúng tôi</h4>
-                <a href="#">
-                    <img src="/images/logo-icon/icon-fb.png" alt="Facebook">
-                    <span>Facebook</span>
-                </a>
-                <img src="/images/logo-icon/bocongthuong.png" alt="Đã thông báo Bộ Công Thương" class="footer-cert">
-                
-                <h4 style="line-height: 1.3; margin-bottom: 20px;">Tải ứng dụng đặt hàng với nhiều ưu đãi hơn</h4>
-                <div class="app-links">
-                    <a href="#"><img src="/images/logo-icon/logo_playstore.png" alt="Google Play"></a>
-                    <a href="#"><img src="/images/logo-icon/logo_appstore.png" alt="App Store"></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2020 Junlly Viet Nam</p>
-        </div>
-    </footer>
-    <!-- Kết thúc footer -->  
-   
   <script src="/js/register.js"></script>
 </body>
+
 </html>

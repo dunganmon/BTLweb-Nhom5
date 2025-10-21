@@ -1,156 +1,234 @@
+/* ----------------- RESPONSIVE ----------------- */
 @media (max-width: 768px) {
-  .main {
-    margin: 20px;
-    padding: 10px;
+  .register-container {
+    flex-direction: column;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+
+  .register-left {
+    display: none;
+  }
+
+  .register-right {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 20px;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
   margin: 0;
-  background-color: #f6f6f2;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: #333;
 }
 
-.main {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 800px;
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 900px;
+  min-height: 520px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden; /*cắt tràn viền ảnh*/
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /*tạo chiều sâu */
+  background-color: #fffcfc;
+  gap: 0;
   margin-bottom: 40px;
 }
 
-h1 {
-  color: red;
+.register-left {
+  flex: 1;
+  overflow: hidden;
+}
+
+.register-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*cắt ảnh phủ kín khung mà không bị méo*/
+  transition: transform 0.6s ease;
+}
+
+.register-left img:hover {
+  transform: scale(1.05);
+}
+
+.register-right {
+  flex: 1;
+  background-color: linear-gradient(180deg, #f6f6f6, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.register-right h1 {
   text-align: center;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  color: #e4002b;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 8px;
 }
 
 .form_main {
-  background: #ff0000;
-  padding: 40px 50px 0 50px;
-  border-radius: 20px;
-  margin: 0 0 20px 0;
-}
-
-.form_main input,
-.form_main select {
-  margin-bottom: 15px;
-  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px 30px;
   width: 100%;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
-.form_main input:focus,
-.form_main select:focus {
-  box-shadow: 0 0 5px #ffd700;
+.form_main:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form_main input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.form_main input:focus {
+  border-color: #ffeb00;
+  box-shadow: 0 0 4px rgba(255, 235, 0, 0.3);
 }
 
 .form_main p {
-  background-color: rgb(234, 242, 242);
+  font-size: 13px;
+  margin-top: -8px;
+  color: #555;
+  background: #f8f8f8;
+  padding: 5px 10px;
   border-radius: 5px;
-  padding: 5px;
-  margin-top: -12px;
-  margin-bottom: 15px;
-  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 10px;
 }
 
 .checkbox-section {
-  padding: 10px 20px;
-  margin: 10px 0;
+  margin: 25px 0 10px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0;
+  margin-top: -5px;
 }
 
 .checkbox-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
-.checkbox-item input[type="checkbox"],
-.checkbox-section input[type="checkbox"] {
+.checkbox-item input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: red; 
-  margin: 0;
+  margin-top: 3px;
+  accent-color: #ffeb00;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.checkbox-item label,
-.checkbox-section label {
-  color: #000;
-  font-size: 16px;
+.checkbox-item label {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.4;
 }
 
 .checkbox-item a {
   color: #0044cc;
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-.checkbox-section.promo {
+.checkbox-item a:hover {
+  text-decoration: underline;
+  color: #001f99;
+}
+
+.checkbox-section_promo {
   display: flex;
   align-items: center;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: flex-start;
+  margin-top: -15px;
+}
+
+.checkbox-section_promo input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #ffeb00;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.checkbox-section_promo label {
+  font-size: 14px;
+  color: #333;
+  margin-top: -10px;
 }
 
 .form_end {
-  background-color: #ffeb00;
-  border-radius: 20px;
   text-align: center;
-  width: 100%;
-  min-height: 250px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;    
-  gap: 25px;    
-  padding: 30px 10px;
+  margin-top: -5px;
+  padding: 10px 5px;
+  border-radius: 10px;
 }
 
 .form_end button {
-  background: red;
-  padding: 15px 40px;
+  background: linear-gradient(90deg, #e4002b, #ff3333);
   color: #fff;
   border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 40px;
   cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  white-space: nowrap;  
+  transition: all 0.3s ease;
 }
 
 .form_end button:hover {
-  background: darkred;
+  background: linear-gradient(90deg, #c0001f, #ff1a1a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(228, 0, 43, 0.3);
 }
 
 .form_end .thongbao {
-  margin-top: 20px;
-  font-size: 17px;
-  color: #000;
+  font-size: 14px;
+  color: #333;
+  margin-top: 18px;
 }
 
 .form_end .thongbao a {
-  color: #0066cc;
-  font-weight: bold;
+  color: #0044cc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.form_end .thongbao a:hover {
+  text-decoration: underline;
+  color: #001f99;
 }

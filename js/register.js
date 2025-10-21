@@ -5,8 +5,7 @@ const sdtInput = document.getElementById("sdt");
 const mailInput = document.getElementById("mail");
 const passInput = document.getElementById("pass");
 const confirmPassInput = document.getElementById("xacnhan");
-const gender = document.getElementById("gender");
-const agreeInput = document.getElementById(".agree");
+const agreeInputs = document.querySelectorAll('input[name^="agree"]');
 const securityText = document.getElementById("baomat");
 
 const hoError = document.getElementById("HoError");
@@ -15,7 +14,6 @@ const phoneError = document.getElementById("PhoneError");
 const emailError = document.getElementById("EmailError");
 const passwordError = document.getElementById("PasswordError");
 const confirmError = document.getElementById("ConfirmError");
-const genderError = document.getElementById("GenderError");
 const agreeError = document.getElementById("AgreeError");
 
 function checkPasswordStrength(password) {
@@ -67,7 +65,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let ok = true;
 
-  [hoError, tenError, phoneError, emailError, passwordError, confirmError, genderError, agreeError]
+  [hoError, tenError, phoneError, emailError, passwordError, confirmError, agreeError]
     .forEach(div => div.style.display = "none");
 
   if (!hoInput.value.trim()) { showError(hoInput, hoError, "Họ không được để trống"); ok = false; }
@@ -76,8 +74,8 @@ form.addEventListener("submit", (e) => {
   if (!mailInput.value.trim()) { showError(mailInput, emailError, "Email không được để trống"); ok = false; }
   if (!passInput.value) { showError(passInput, passwordError, "Mật khẩu không được để trống"); ok = false; }
   if (!confirmPassInput.value) { showError(confirmPassInput, confirmError, "Xác nhận mật khẩu không được để trống"); ok = false; }
-  if (!gender.value) { genderError.style.display = "block"; ok = false; }
   if (![...agreeInputs].every(i => i.checked)) { agreeError.style.display = "block"; ok = false; }
+
 
   if (mailInput.value.trim() && !isValidEmail(mailInput.value.trim())) {
     showError(mailInput, emailError, "Email không hợp lệ (vd: ten@example.com)");
@@ -115,7 +113,6 @@ form.addEventListener("submit", (e) => {
     phone: sdtInput.value.trim(),
     email: mailInput.value.trim(),
     password: passInput.value,
-    gender: gender.value,
   };
 
   users.push(newUser);
