@@ -5,7 +5,7 @@ const sdtInput = document.getElementById("sdt");
 const mailInput = document.getElementById("mail");
 const passInput = document.getElementById("pass");
 const confirmPassInput = document.getElementById("xacnhan");
-const agreeInputs = document.querySelectorAll('input[name^="agree"]');
+const agreeInput = document.getElementById("agree1");
 const securityText = document.getElementById("baomat");
 
 const hoError = document.getElementById("HoError");
@@ -74,7 +74,7 @@ form.addEventListener("submit", (e) => {
   if (!mailInput.value.trim()) { showError(mailInput, emailError, "Email không được để trống"); ok = false; }
   if (!passInput.value) { showError(passInput, passwordError, "Mật khẩu không được để trống"); ok = false; }
   if (!confirmPassInput.value) { showError(confirmPassInput, confirmError, "Xác nhận mật khẩu không được để trống"); ok = false; }
-  if (![...agreeInputs].every(i => i.checked)) { agreeError.style.display = "block"; ok = false; }
+  if (!agreeInput.checked) { agreeError.style.display = "block"; ok = false; }
 
 
   if (mailInput.value.trim() && !isValidEmail(mailInput.value.trim())) {
