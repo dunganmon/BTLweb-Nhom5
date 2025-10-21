@@ -1,0 +1,268 @@
+nav ul li:nth-child(3) a {
+    background-color: #F4D2D6;
+    color: #E31837;
+    border-radius: 10px 10px 0 0;
+}
+
+nav ul li .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: block !important;
+}
+
+.dropdown-menu.sticky {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 0 0 12px 12px;
+    display: block;
+    z-index: 1002;
+}
+
+nav.nav-hidden {
+    transform: translateY(-110px);
+    transition: transform .25s ease;
+}
+
+.top-bar.hidden {
+    transform: translateY(-40px);
+    transition: transform .25s ease;
+}
+
+body.has-sticky-menu {
+    padding-top: 190px;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+.menu-item.active-menu span {
+    color: #E31837;
+}
+
+.menu-content {
+    width: 100%;
+    max-width: 100%;
+    background-image: url(/images/menu-img/backgr-top.png), url(/images/menu-img/backgr-bottom.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center calc(100% - 80px);
+    background-size: 100% auto, 100% auto;
+    position: relative;
+    min-height: 1000px;
+}
+
+.product-section {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 24px 16px 60px;
+}
+
+/* Lưới 3 cột -> 2 cột -> 1 cột */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card món ăn */
+.product-card {
+    background: #fff;
+    border: 2px dashed #f1c24c;
+    /* viền chấm chấm như hình */
+    border-radius: 18px;
+    padding: 18px 18px 18px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .06);
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, .08);
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-card .thumb {
+    width: 100%;
+    aspect-ratio: 1.2 / 1;
+    display: grid;
+    place-items: center;
+    margin-top: 8px;
+}
+
+.product-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* thay bằng contain nếu muốn nền trắng */
+    border-radius: 12px;
+    background: #f8f8f8;
+}
+
+/* Tên món */
+.product-card .title {
+    margin: 16px 8px 10px;
+    font-size: 16px;
+    letter-spacing: .4px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+/* Giá */
+.product-card .price {
+    font-weight: 800;
+    font-size: 20px;
+    color: #E31837;
+    margin-bottom: 8px;
+}
+
+.product-card .currency {
+    font-weight: 700;
+}
+
+/* Nút đặt hàng */
+.btn-order {
+    background: #E31837;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: filter .2s ease, transform .1s ease;
+    margin-top: auto;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.btn-order:hover {
+    filter: brightness(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, .08);
+}
+
+.btn-order:active {
+    transform: scale(0.98);
+}
+
+/* Đường kẻ chấm chấm giữa các hàng */
+.row-sep {
+    height: 2px;
+    margin: 36px auto 8px;
+    max-width: 980px;
+    background-image: linear-gradient(to right, #f1c24c 50%, rgba(0, 0, 0, 0) 0%);
+    background-position: top;
+    background-size: 14px 2px;
+    background-repeat: repeat-x;
+}
+
+
+/* Hiệu ứng bung nhẹ từ dưới lên */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Áp dụng cho các section khi được hiển thị */
+.product-section {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Khi section vừa hiện (block) thì kích hoạt animation */
+.product-section[style*="display: block"] {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@media screen and (max-width: 1300px) {
+    .dropdown-menu {
+        width: 95%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .footer-container {
+        grid-template-areas:
+            "logo"
+            "left"
+            "center"
+            "right";
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-right {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 20px;
+    }
+
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .footer-center {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dropdown-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .menu-item span {
+        font-size: 12px;
+    }
+}
