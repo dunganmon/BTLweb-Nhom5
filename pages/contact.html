@@ -4,8 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="../css/menu-footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
-    liên hệ
+     <!-- Bắt đầu navbar -->
+    <div class="top-bar">
+        <div class="auth-links">
+            <a href="pages/login.html">Đăng nhập</a>
+            <span class="auth-separator">/</span>
+            <a href="pages/register.html">Đăng ký</a>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <img src="../images/logo-icon/logo-junlly.png" alt="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="pages/about.html">Về Junlly</a></li>
+            <li>
+                <a href="pages/menu.html">Thực đơn</a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/monngonphaithu.png" alt="Món ngon phải thử">
+                                <span>Món ngon phải thử</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/gaRonVuiVe.png" alt="">
+                                <span>Gà ròn vui vẻ</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/miY.png" alt="">
+                                <span>Mỳ ý Junlly</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/gaSotCay.png" alt="">
+                                <span>Gà sốt cay</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/burgerVsCom.png" alt="">
+                                <span>Burger/Cơm</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/phananphu.png" alt="">
+                                <span>Phần ăn phụ</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/trangmieng.png" alt="">
+                                <span>Món tráng miệng</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="../images/nav-menu/thucuong.png" alt="">
+                                <span>Thức uống</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="pages/promotions.html">Khuyến mãi</a></li>
+            <li><a href="pages/contact.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <!-- Kết thúc navbar -->
+
+    <!-- Nội dung -->
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Liên hệ với chúng tôi</h1>
+            <p>132 Cầu Giấy, Nghĩa Đô, Hà Nội</p>
+            <div class="contact-buttons">
+                <a href="mailto:junlly@gmail.com" class="contact-btn">📧 Gửi email</a>
+                <a href="tel:123456789" class="contact-btn">📞 Gọi điện</a>
+            </div>
+        </div>
+        <!--Form-->
+        <form class="contact-form">
+            <h3>Form Liên Hệ</h3>
+            <p>Vui lòng điền thông tin bên dưới để liên hệ với chúng tôi!</p>
+
+            <div class="form-row">
+                <input type="text" placeholder="Họ và tên">
+                <input type="email" placeholder="Email">
+            </div>
+
+            <input type="text" placeholder="Số điện thoại">
+            <input type="text" placeholder="Địa chỉ">
+
+            <div class="form-row">
+                <select>
+                    <option>Chọn tỉnh/thành</option>
+                    <option>Hà Nội</option>
+                </select>
+                <select>
+                    <option>Chọn phường/xã</option>
+                    <option>Nghĩa Đô</option>
+                </select>
+            </div>
+
+            <textarea rows="3" placeholder="Nội dung liên hệ..."></textarea>
+            <button type="submit" class="submit-btn">Gửi đi</button>
+        </form>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h3 class="faq-title">CÂU HỎI THƯỜNG GẶP</h3>
+
+            <div class="faq-item">
+                <div class="faq-header">Junlly có những hình thức thanh toán nào?</div>
+                <div class="faq-content">
+                    <strong>Đáp án:</strong> Junlly chấp nhận: Tiền mặt, thẻ tín dụng, ví điện tử (Momo, ZaloPay), hoặc chuyển khoản.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">Thời gian giao hàng của Junlly là bao lâu?</div>
+                <div class="faq-content">
+                <strong>Đáp án:</strong> Khoảng 30–60 phút, tùy địa điểm và tình trạng đơn hàng.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">Junlly có chương trình khuyến mãi nào hiện tại không?</div>
+                <div class="faq-content">
+                    <strong>Đáp án:</strong> Vui lòng truy cập trang <strong>Khuyến mãi</strong> để xem ưu đãi mới nhất.
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--Kết thúc nội dung-->
+
+    <!-- Bắt đầu footer -->
+    <footer>
+        <div class = "footer-container">
+            <div class="footer-logo">
+                <img src="../images/logo-icon/logo-junlly.png">
+            </div>
+       
+            <div class="footer-left">
+                
+                <p><strong>CỬA HÀNG GÀ RÁN JUNLLY</strong></p>
+                <p>Địa chỉ: 132 Cầu Giấy, Nghĩa Đô, Hà Nội</p>
+                <p>Điện thoại: 123456789</p>
+                <p>Tổng đài: <strong>1900-1533</strong></p>
+                <p>Mã số thuế: 0301234567</p>
+                <p>Ngày cấp: 15/07/2008 – Nơi cấp: Cục Thuế Hà Nội</p>
+            </div>
+
+            <div class="footer-center">
+                <ul>
+                    <li><a href="/BTLweb-Nhom5/pages/contact.html">Liên hệ</a></li>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách thanh toán khi đặt hàng</a></li>
+                    <li><a href="#">Chính sách hoạt động</a></li>
+                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                    <li><a href="#">Chính sách cookie</a></li>
+                    <li><a href="#">Thông tin vận chuyển và giao nhận</a></li>
+                    <li><a href="#">Thông tin đăng ký giao dịch chung</a></li>
+                    <li><a href="#">Hướng dẫn đặt phần ăn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Hãy kết nối với chúng tôi</h4>
+                <a href="#">
+                    <img src="../images/logo-icon/icon-fb.png" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+                <img src="../images/logo-icon/bocongthuong.png" alt="Đã thông báo Bộ Công Thương" class="footer-cert">
+                
+                <h4 style="line-height: 1.3; margin-bottom: 20px;">Tải ứng dụng đặt hàng với nhiều ưu đãi hơn</h4>
+                <div class="app-links">
+                    <a href="#"><img src="../images/logo-icon/logo_playstore.png" alt="Google Play"></a>
+                    <a href="#"><img src="../images/logo-icon/logo_appstore.png" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2020 Junlly Viet Nam</p>
+        </div>
+    </footer>
+    <!-- Kết thúc footer -->
+     <script src="../js/contact.js"></script>
 </body>
 </html>
