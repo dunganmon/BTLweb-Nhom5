@@ -1,11 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="stylesheet" href="/css/menu-footer.css">
+    <link rel="stylesheet" href="/css/menu.css">
+
 </head>
+
 <body>
+<<<<<<< HEAD
     
+=======
+    <!-- Bắt đầu navbar -->
+    <div class="top-bar">
+        <div class="auth-links">
+            <a href="/pages/login.html">Đăng nhập</a>
+            <span class="auth-separator">/</span>
+            <a href="/pages/register.html">Đăng ký</a>
+        </div>
+    </div>
+
+    <nav id="mainNav" class="mainNav">
+        <div class="logo">
+            <img src="/images/logo-icon/logo-junlly.png" alt="logo">
+        </div>
+        <ul>
+            <li><a href="/index.html">Trang chủ</a></li>
+            <li><a href="/pages/about.html">Về Junlly</a></li>
+            <li>
+                <a href="/pages/menu.html">Thực đơn</a>
+                <div id="stickyMenu" class="dropdown-menu dropdown-menu-stickyMenu">
+                    <div class="dropdown-content">
+                        <div class="menu-item" data-target="monngon">
+                            <a href="#">
+                                <img src="/images/nav-menu/monngonphaithu.png" alt="Món ngon phải thử">
+                                <span>Món ngon phải thử</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="garon">
+                            <a href="#">
+                                <img src="/images/nav-menu/gaRonVuiVe.png" alt="">
+                                <span>Gà ròn vui vẻ</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="myy">
+                            <a href="#">
+                                <img src="/images/nav-menu/miY.png" alt="">
+                                <span>Mỳ ý Junlly</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="gasotcay">
+                            <a href="#">
+                                <img src="/images/nav-menu/gaSotCay.png" alt="">
+                                <span>Gà sốt cay</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="burgercom">
+                            <a href="#">
+                                <img src="/images/nav-menu/burgerVsCom.png" alt="">
+                                <span>Burger/Cơm</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="phananphu">
+                            <a href="#">
+                                <img src="/images/nav-menu/phananphu.png" alt="">
+                                <span>Phần ăn phụ</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="trangmieng">
+                            <a href="#">
+                                <img src="/images/nav-menu/trangmieng.png" alt="">
+                                <span>Món tráng miệng</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" data-target="thucuong">
+                            <a href="#">
+                                <img src="/images/nav-menu/thucuong.png" alt="">
+                                <span>Thức uống</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </li>
+            <li><a href="/pages/promotions.html">Khuyến mãi</a></li>
+            <li><a href="/pages/contact.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <!-- Kết thúc navbar -->
+
+    <!-- Menu -->
+    <!-- Bắt đầu nội dung thực đơn -->
+    <main class="menu-content">
+        <!-- Danh mục: Món ngon phải thử -->
+        <div class="product-section" id="monngon" style="display: block;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/35K.jpg" alt="COMBO 35K">
+                    </figure>
+                    <h3 class="title">COMBO 35K</h3>
+                    <div class="price">35,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBO1.jpg" alt="COMBO 65K MÌ Ý SỐT CAY">
+                    </figure>
+                    <h3 class="title">COMBO 65K MÌ Ý SỐT CAY</h3>
+                    <div class="price">65,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBOFA.jpg" alt="COMBOFA">
+                    </figure>
+                    <h3 class="title">COMBO MỘT MÌNH ĂN NGON</h3>
+                    <div class="price">80,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBODOI.jpg" alt="COMBO CAP DOI">
+                    </figure>
+                    <h3 class="title">COMBO CAP DOI 2 MIẾNG</h3>
+                    <div class="price">145,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBOCANHA.png" alt="COMBO CẢ NHÀ">
+                    </figure>
+                    <h3 class="title">COMBO CẢ NHÀ </h3>
+                    <div class="price">185,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBOSN.jpg" alt="COMBO SN">
+                    </figure>
+                    <h3 class="title">COMBO SINH NHẬT</h3>
+                    <div class="price">300,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+            </div>
+        </div>
+
+        <!-- Danh mục: Gà ròn vui vẻ -->
+        <div class="product-section" id="garon" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/33K.png" alt="COMBO 35K">
+                    </figure>
+                    <h3 class="title">1 MIẾNG GÀ RÒN VUI VẺ</h3>
+                    <div class="price">33,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/66K.png" alt="COMBO 35K">
+                    </figure>
+                    <h3 class="title">2 MIẾNG GÀ RÒN VUI VẺ</h3>
+                    <div class="price">66,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/126K.png" alt="COMBO 79K">
+                    </figure>
+                    <h3 class="title">4 MIẾNG GÀ RÒN VUI VẺ</h3>
+                    <div class="price">126,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/48K.png" alt="BURGER GÀ">
+                    </figure>
+                    <h3 class="title">1 CƠM GÀ RÒN VUI VẺ</h3>
+                    <div class="price">48,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/COM.jpg" alt="COMBO 79K MÌ Ý SỐT CAY">
+                    </figure>
+                    <h3 class="title">CƠM GÀ RÒN VUI VẺ + 1 NƯỚC NGỌT + 1 NƯỚC SỐT</h3>
+                    <div class="price">91,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gagion/2GARON.jpg" alt="GÀ GIÒN">
+                    </figure>
+                    <h3 class="title">2 GÀ RÒN VUI VẺ + 1 KHOAI TÂY CHIÊN</h3>
+                    <div class="price">62,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Danh sách Mỳ ý -->
+        <div class="product-section" id="myy" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/myy/40K.jpg" alt="MYYSOTCAY">
+                    </figure>
+                    <h3 class="title">MỲ Ý SỐT CAY VỪA</h3>
+                    <div class="price">40,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/myy/50k.jpg" alt="50K">
+                    </figure>
+                    <h3 class="title">MỲ Ý SỐT CAY + NƯỚC</h3>
+                    <div class="price">50,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/myy/MYNUOC.jpg" alt="COMBO 79K MÌ Ý SỐT CAY">
+                    </figure>
+                    <h3 class="title">MỲ Ý VỪA + 2 GÀ KHÔNG XƯƠNG + 1 NƯỚC NGỌT</h3>
+                    <div class="price">79,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/myy/95K.jpg" alt="BURGER GÀ">
+                    </figure>
+                    <h3 class="title">MỲ Ý VỪA + 1 GÀ RÒN VUI VẺ + 1 KHOAI TÂY CHIÊN VỪA + 1 NƯỚC NGỌT</h3>
+                    <div class="price">95,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/myy/45K.jpg" alt="GÀ GIÒN">
+                    </figure>
+                    <h3 class="title">MỲ Ý VỪA + 1 NƯỚC NGỌT</h3>
+                    <div class="price">45,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/monngon/COMBOCANHA.png" alt="COMBO CẢ NHÀ">
+                    </figure>
+                    <h3 class="title">COMBO MỲ Ý + GÀ + NƯỚC </h3>
+                    <div class="price">200,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+            </div>
+        </div>
+
+        <!-- Danh sách Gà sốt cay -->
+        <div class="product-section" id="gasotcay" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/35K.jpg" alt="1 MIẾNG GÀ SỐT CAY">
+                    </figure>
+                    <h3 class="title">1 MIẾNG GÀ SỐT CAY</h3>
+                    <div class="price">35,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/70k.jpg" alt="GASOTCAY">
+                    </figure>
+                    <h3 class="title">2 MIẾNG GÀ SỐT CAY</h3>
+                    <div class="price">70,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/90K.jpg" alt="2 MIẾNG GÀ SỐT CAY">
+                    </figure>
+                    <h3 class="title">2 GÀ SỐT CAY + 1 KHOAI CHIÊN + 1 NƯỚC</h3>
+                    <div class="price">55,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/50K.jpg" alt="1 CƠM GÀ SỐT CAY">
+                    </figure>
+                    <h3 class="title">1 CƠM GÀ SỐT CAY</h3>
+                    <div class="price">50,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/60K.jpg" alt="1 CƠM GÀ SỐT CAY + 1 NƯỚC">
+                    </figure>
+                    <h3 class="title">1 CƠM GÀ SỐT CAY + 1 NƯỚC NGỌT</h3>
+                    <div class="price">69,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/gasotcay/65K.jpg" alt="1 CƠM GÀ SỐT CAY + 1 NƯỚC + 1 SÚP">
+                    </figure>
+                    <h3 class="title">1 CƠM GÀ SỐT CAY + 1 NƯỚC NGỌT + 1 SÚP BÍ ĐỎ NHỎ</h3>
+                    <div class="price">62,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Danh sách burger/cơm -->
+        <div class="product-section" id="burgercom" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/35K.jpg" alt="BURGER">
+                    </figure>
+                    <h3 class="title">1 BURGER TÔM</h3>
+                    <div class="price">35,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/50K.jpg" alt="BURGER">
+                    </figure>
+                    <h3 class="title">1 BURGER TÔM + 1 NƯỚC NGỌT</h3>
+                    <div class="price">50,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/25K.jpg" alt="JUNLLY HOTDOG">
+                    </figure>
+                    <h3 class="title">JUNLLY HOTDOG</h3>
+                    <div class="price">25,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/45K.jpg" alt="BURGER GÀ">
+                    </figure>
+                    <h3 class="title">BURGER GÀ + KHOAI + NƯỚC</h3>
+                    <div class="price">45,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/COM.jpg" alt="CƠM GÀ MẮM TỎI">
+                    </figure>
+                    <h3 class="title">CƠM GÀ MẮM TỎI</h3>
+                    <div class="price">62,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/burgercom/COMNUOC.jpg" alt="CƠM GÀ COMBO">
+                    </figure>
+                    <h3 class="title">CƠM GÀ MẮM TỎI + NƯỚC</h3>
+                    <div class="price">55,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+            </div>
+        </div>
+
+        <!-- Danh sách Phần ăn phụ -->
+        <div class="product-section" id="phananphu" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/lac.jpg" alt="KHOAI TÂY LẮC">
+                    </figure>
+                    <h3 class="title">KHOAI TÂY LẮC</h3>
+                    <div class="price">25,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/chien.jpg" alt="KHOAI TÂY CHIÊN">
+                    </figure>
+                    <h3 class="title">KHOAI TÂY CHIÊN</h3>
+                    <div class="price">25,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/com.png" alt="CƠM">
+                    </figure>
+                    <h3 class="title">CƠM TRẮNG</h3>
+                    <div class="price">10,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/sup.png" alt="SÚP">
+                    </figure>
+                    <h3 class="title">SÚP BÍ ĐỎ</h3>
+                    <div class="price">15,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/tuong.jpg" alt="SỐT">
+                    </figure>
+                    <h3 class="title">SỐT TƯƠNG CÀ</h3>
+                    <div class="price">2,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/anphu/chua.jpg" alt="SỐT">
+                    </figure>
+                    <h3 class="title">SỐT CHUA NGỌT</h3>
+                    <div class="price">55,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+            </div>
+        </div>
+
+        <!-- Danh sách Món tráng miệng -->
+        <div class="product-section" id="trangmieng" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/trangmieng/dau.jpg" alt="KEM 35K">
+                    </figure>
+                    <h3 class="title">KEM DÂU</h3>
+                    <div class="price">15,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/trangmieng/socola.png" alt="KEM 79K">
+                    </figure>
+                    <h3 class="title">KEM SOCOLA</h3>
+                    <div class="price">15,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/trangmieng/thach.jpg" alt="KEM 79K">
+                    </figure>
+                    <h3 class="title">KEM THẠCH</h3>
+                    <div class="price">20,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/trangmieng/socolaC.png" alt="BURGER GÀ">
+                    </figure>
+                    <h3 class="title">KEM SOCOLA (CÚP)</h3>
+                    <div class="price">10,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/trangmieng/tuoiC.png" alt="GÀ GIÒN">
+                    </figure>
+                    <h3 class="title">KEM SỮA TƯƠI (CÚP)</h3>
+                    <div class="price">10,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+            </div>
+        </div>
+        <!-- Danh sách Thức uống -->
+        <div class="product-section" id="thucuong" style="display:none;">
+            <h2 style="text-align:center; color:#E31837;"></h2>
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/xoai.png" alt="NƯỚC ÉP XOÀI ĐÀO">
+                    </figure>
+                    <h3 class="title">NƯỚC ÉP XOÀI ĐÀO</h3>
+                    <div class="price">20,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/PEPSI.png" alt="PEPSI ">
+                    </figure>
+                    <h3 class="title">PEPSI </h3>
+                    <div class="price">12,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/mirinda.png" alt="MIRINDA">
+                    </figure>
+                    <h3 class="title">NƯỚC MIRINDA</h3>
+                    <div class="price">12,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/coca.jpg" alt="COCA">
+                    </figure>
+                    <h3 class="title">NƯỚC COCA</h3>
+                    <div class="price">12,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/nuoc.png" alt="NƯỚC SUỐI">
+                    </figure>
+                    <h3 class="title">NƯỚC SUỐI</h3>
+                    <div class="price">10,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <figure class="thumb">
+                        <img src="/images/menu-img/nuoc/7up.png" alt="7UP">
+                    </figure>
+                    <h3 class="title">NƯỚC 7UP</h3>
+                    <div class="price">12,000 <span class="currency">đ</span></div>
+                    <button class="btn-order">ĐẶT HÀNG</button>
+                </article>
+            </div>
+        </div>
+    </main>
+    <!-- Kết thúc nội dung thực đơn -->
+
+    <!-- Bắt đầu footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/images/logo-icon/logo-junlly.png">
+            </div>
+
+            <div class="footer-left">
+
+                <p><strong>CỬA HÀNG GÀ RÁN JUNLLY</strong></p>
+                <p>Địa chỉ: 132 Cầu Giấy, Nghĩa Đô, Hà Nội</p>
+                <p>Điện thoại: 123456789</p>
+                <p>Tổng đài: <strong>1900-1533</strong></p>
+                <p>Mã số thuế: 0301234567</p>
+                <p>Ngày cấp: 15/07/2008 – Nơi cấp: Cục Thuế Hà Nội</p>
+            </div>
+
+            <div class="footer-center">
+                <ul>
+                    <li><a href="/BTLweb-Nhom5/pages/contact.html">Liên hệ</a></li>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách thanh toán khi đặt hàng</a></li>
+                    <li><a href="#">Chính sách hoạt động</a></li>
+                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                    <li><a href="#">Chính sách cookie</a></li>
+                    <li><a href="#">Thông tin vận chuyển và giao nhận</a></li>
+                    <li><a href="#">Thông tin đăng ký giao dịch chung</a></li>
+                    <li><a href="#">Hướng dẫn đặt phần ăn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Hãy kết nối với chúng tôi</h4>
+                <a href="#">
+                    <img src="/images/logo-icon/icon-fb.png" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+                <img src="/images/logo-icon/bocongthuong.png" alt="Đã thông báo Bộ Công Thương" class="footer-cert">
+
+                <h4 style="line-height: 1.3; margin-bottom: 20px;">Tải ứng dụng đặt hàng với nhiều ưu đãi hơn</h4>
+                <div class="app-links">
+                    <a href="#"><img src="/images/logo-icon/logo_playstore.png" alt="Google Play"></a>
+                    <a href="#"><img src="/images/logo-icon/logo_appstore.png" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2020 Junlly Viet Nam</p>
+        </div>
+    </footer>
+    <!-- Kết thúc footer -->
+    <!-- Javascript -->
+    <script src="/js/menu.js"></script>
+>>>>>>> origin/develop
 </body>
+
 </html>
