@@ -12,10 +12,16 @@
 <body>
     <!-- Bắt đầu navbar -->
     <div class="top-bar">
-        <div class="auth-links">
-            <a href="pages/login.html">Đăng nhập</a>
-            <span class="auth-separator">/</span>
-            <a href="pages/register.html">Đăng ký</a>
+        <div class="auth-links" id="authArea">
+            <a href="pages/login.html" id="loginLink">Đăng nhập</a>
+            <span class="auth-separator" id="sep">/</span>
+            <a href="pages/register.html" id="registerLink">Đăng ký</a>
+        </div>
+        <div class="user-info" id="userInfo" style="display: none;">
+            <span id="welcomeText"></span>
+            <button id="logoutBtn" style="margin-left: 15px; background-color: red; font-weight: bold;
+            color: black; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; font-size: 15px;">
+            ĐĂNG XUẤT</button>
         </div>
     </div>
 
@@ -267,6 +273,7 @@
      
     <script src="js/main.js"></script>
     <script src="js/news.js"></script>
+    <script src="js/userStatus.js"></script>
 </body>
 
 </html>
