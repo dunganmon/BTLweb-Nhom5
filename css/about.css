@@ -16,7 +16,7 @@ h2 {
     margin-bottom: 20px;
 }
 /*Thanh điều hướng: tô màu thẻ "Về Junlly"*/
-ul li:nth-child(2) a {
+nav ul li:nth-child(2) a {
     background-color: #F4D2D6;
     color: #E31837;
     border-radius: 10px 10px 0 0;

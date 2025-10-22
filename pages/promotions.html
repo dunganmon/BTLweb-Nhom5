@@ -11,10 +11,16 @@
 <body>
     <!-- Bắt đầu navbar -->
     <div class="top-bar">
-        <div class="auth-links">
-            <a href="pages/login.html">Đăng nhập</a>
-            <span class="auth-separator">/</span>
-            <a href="pages/register.html">Đăng ký</a>
+        <div class="auth-links" id="authArea">
+            <a href="pages/login.html" id="loginLink">Đăng nhập</a>
+            <span class="auth-separator" id="sep">/</span>
+            <a href="pages/register.html" id="registerLink">Đăng ký</a>
+        </div>
+        <div class="user-info" id="userInfo" style="display: none;">
+            <span id="welcomeText"></span>
+            <button id="logoutBtn" style="margin-left: 15px; background-color: red; font-weight: bold;
+            color: black; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; font-size: 15px;">
+            ĐĂNG XUẤT</button>
         </div>
     </div>
 
@@ -22,57 +28,57 @@
         <div class="logo">
             <img src="../images/logo-icon/logo-junlly.png" alt="logo">
         </div>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="pages/about.html">Về Junlly</a></li>
+      <ul>
+            <li><a href="/index.html">Trang chủ</a></li>
+            <li><a href="/pages/about.html">Về Junlly</a></li>
             <li>
-                <a href="pages/menu.html">Thực đơn</a>
+                <a href="/pages/menu.html">Thực đơn</a>
                 <div class="dropdown-menu">
                     <div class="dropdown-content">
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#monngonphaithu">
                                 <img src="../images/nav-menu/monngonphaithu.png" alt="Món ngon phải thử">
                                 <span>Món ngon phải thử</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#garyon">
                                 <img src="../images/nav-menu/gaRonVuiVe.png" alt="">
                                 <span>Gà ròn vui vẻ</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#myy">
                                 <img src="../images/nav-menu/miY.png" alt="">
                                 <span>Mỳ ý Junlly</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#gasotcay">
                                 <img src="../images/nav-menu/gaSotCay.png" alt="">
                                 <span>Gà sốt cay</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#burgercom">
                                 <img src="../images/nav-menu/burgerVsCom.png" alt="">
                                 <span>Burger/Cơm</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#phananphu">
                                 <img src="../images/nav-menu/phananphu.png" alt="">
                                 <span>Phần ăn phụ</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="/pages/menu.html#trangmieng">
                                 <img src="../images/nav-menu/trangmieng.png" alt="">
                                 <span>Món tráng miệng</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#">
+                            <a href="pages/menu.html#thucuong">
                                 <img src="../images/nav-menu/thucuong.png" alt="">
                                 <span>Thức uống</span>
                             </a>
@@ -80,8 +86,8 @@
                     </div>
                 </div>
             </li>
-            <li><a href="pages/promotions.html">Khuyến mãi</a></li>
-            <li><a href="pages/contact.html">Liên hệ</a></li>
+            <li><a href="/pages/promotions.html">Khuyến mãi</a></li>
+            <li><a href="/pages/contact.html">Liên hệ</a></li>
         </ul>
     </nav>
     <!-- Kết thúc navbar -->
@@ -181,5 +187,6 @@
     </footer>
     <!-- Kết thúc footer -->
      <script src="../js/promotions.js"></script>
+     <script src="/js/userStatus.js"></script>
 </body>
 </html>

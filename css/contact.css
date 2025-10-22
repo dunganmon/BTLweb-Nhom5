@@ -11,7 +11,7 @@ body {
 }
 
 /* Thanh điều hướng: tô màu thẻ "Liên hệ" */
-ul li:nth-child(5) a {
+nav ul li:nth-child(5) a {
   background: #F4D2D6;
   color: #E31837;
   border-radius: 10px 10px 0 0;

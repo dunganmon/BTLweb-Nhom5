@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 /*Thanh điều hướng: tô màu thẻ "Khuyến mãi"*/
-ul li:nth-child(4) a {
+nav ul li:nth-child(4) a {
   background: #F4D2D6;
   color: #E31837;
   border-radius: 10px 10px 0 0;

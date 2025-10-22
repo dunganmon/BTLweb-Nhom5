@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const slidesContainer = document.querySelector(".slides");
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
@@ -40,4 +38,4 @@ dots.forEach((dot, i) => {
 });
 
 interval = setInterval(nextSlide, 3000);
->>>>>>> origin/develop
+
