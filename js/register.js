@@ -8,14 +8,6 @@ const confirmPassInput = document.getElementById("xacnhan");
 const agreeInput = document.getElementById("agree1");
 const securityText = document.getElementById("baomat");
 
-const hoError = document.getElementById("HoError");
-const tenError = document.getElementById("TenError");
-const phoneError = document.getElementById("PhoneError");
-const emailError = document.getElementById("EmailError");
-const passwordError = document.getElementById("PasswordError");
-const confirmError = document.getElementById("ConfirmError");
-const agreeError = document.getElementById("AgreeError");
-
 function checkPasswordStrength(password) {
   let strength = 0;
   if (password.length >= 8) strength++;
@@ -37,17 +29,6 @@ function isValidPhone(phone) {
   return /^0\d{9}$/.test(phone);
 }
 
-function showError(input, errorDiv, message) {
-  errorDiv.textContent = message;
-  errorDiv.style.display = "block";
-  input.style.border = "1px solid red";
-}
-
-function clearError(input, errorDiv) {
-  errorDiv.style.display = "none";
-  input.style.border = "1px solid #ccc";
-}
-
 passInput.addEventListener("input", () => {
   const value = passInput.value;
   if (!value) {
@@ -63,45 +44,27 @@ passInput.addEventListener("input", () => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let ok = true;
 
-  [hoError, tenError, phoneError, emailError, passwordError, confirmError, agreeError]
-    .forEach(div => div.style.display = "none");
+  if (!hoInput.value.trim()) return alert("Họ không được để trống");
+  if (!tenInput.value.trim()) return alert("Tên không được để trống");
+  if (!sdtInput.value.trim()) return alert("Số điện thoại không được để trống");
+  if (!isValidPhone(sdtInput.value.trim())) return alert("❌ Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0");
 
-  if (!hoInput.value.trim()) { showError(hoInput, hoError, "Họ không được để trống"); ok = false; }
-  if (!tenInput.value.trim()) { showError(tenInput, tenError, "Tên không được để trống"); ok = false; }
-  if (!sdtInput.value.trim()) { showError(sdtInput, phoneError, "Số điện thoại không được để trống"); ok = false; }
-  if (!mailInput.value.trim()) { showError(mailInput, emailError, "Email không được để trống"); ok = false; }
-  if (!passInput.value) { showError(passInput, passwordError, "Mật khẩu không được để trống"); ok = false; }
-  if (!confirmPassInput.value) { showError(confirmPassInput, confirmError, "Xác nhận mật khẩu không được để trống"); ok = false; }
-  if (!agreeInput.checked) { agreeError.style.display = "block"; ok = false; }
+  if (!mailInput.value.trim()) return alert("Email không được để trống");
+  if (!isValidEmail(mailInput.value.trim())) return alert("Email không hợp lệ (vd: ten@example.com)");
 
-
-  if (mailInput.value.trim() && !isValidEmail(mailInput.value.trim())) {
-    showError(mailInput, emailError, "Email không hợp lệ (vd: ten@example.com)");
-    ok = false;
-  }
-
-  if (sdtInput.value.trim() && !isValidPhone(sdtInput.value.trim())) {
-    showError(sdtInput, phoneError, "Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0");
-    ok = false;
-  }
-
-  if (passInput.value && confirmPassInput.value && passInput.value !== confirmPassInput.value) {
-    showError(confirmPassInput, confirmError, "Mật khẩu xác nhận không trùng khớp");
-    ok = false;
-  }
+  if (!passInput.value) return alert("Mật khẩu không được để trống");
+  if (!confirmPassInput.value) return alert("Xác nhận mật khẩu không được để trống");
+  if (passInput.value !== confirmPassInput.value) return alert("Mật khẩu xác nhận không trùng khớp");
 
   const level = checkPasswordStrength(passInput.value);
-  if (level === "Yếu") {
-    showError(passInput, passwordError, "Mật khẩu quá yếu (≥8 ký tự, gồm chữ hoa, chữ thường, số/ký tự đặc biệt)");
-    ok = false;
-  }
+  if (level === "Yếu")
+    return alert("Mật khẩu quá yếu (≥8 ký tự, gồm chữ hoa, chữ thường, số/ký tự đặc biệt)");
 
-  if (!ok) return;
+  if (!agreeInput.checked) return alert("Bạn cần đồng ý với chính sách của chúng tôi");
+
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-
   if (users.some(u => u.email === mailInput.value.trim() || u.phone === sdtInput.value.trim())) {
     alert("Email hoặc số điện thoại đã được đăng ký!");
     return;
@@ -118,10 +81,10 @@ form.addEventListener("submit", (e) => {
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert(`${tenInput.value.trim()} đăng ký thành công 🎉`);
-  window.location.href = "/pages/login.html";
-
+  alert(`🎉 ${tenInput.value.trim()} đăng ký thành công!`);
   form.reset();
   securityText.textContent = "Độ bảo mật: Không";
   securityText.style.color = "#333";
+
+  window.location.href = "/pages/login.html";
 });
