@@ -7,18 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   if (currentUser && currentUser.name) {
-    authArea.style.display = "none"; 
-    userInfo.style.display = "flex"; 
-    welcomeText.textContent = `Xin chào, ${currentUser.name}! 👋`;
+    authArea && (authArea.style.display = "none");
+    userInfo && (userInfo.style.display = "flex");
+    welcomeText && (welcomeText.textContent = `Xin chào, ${currentUser.name}! 👋`);
   } else {
-    authArea.style.display = "flex";
-    userInfo.style.display = "none";
+    authArea && (authArea.style.display = "flex");
+    userInfo && (userInfo.style.display = "none");
   }
 
-  logoutBtn.addEventListener("click", function () {
-    if (confirm("Bạn có chắc muốn đăng xuất không?")) {
-      localStorage.removeItem("currentUser"); 
-      window.location.href = "pages/login.html";
-    }
+  logoutBtn?.addEventListener("click", function () {
+    if (!confirm("Bạn có chắc muốn đăng xuất không?")) return;
+    localStorage.removeItem("currentUser");
+    const inPages = location.pathname.includes("/pages/");
+    location.href = inPages ? "login.html" : "pages/login.html";
   });
 });

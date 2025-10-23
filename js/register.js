@@ -86,5 +86,5 @@ form.addEventListener("submit", (e) => {
   securityText.textContent = "Độ bảo mật: Không";
   securityText.style.color = "#333";
 
-  window.location.href = "/pages/login.html";
+  window.location.href = "login.html";
 });
