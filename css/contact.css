@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fffaf6;
+  color: #333;
+}
+
+/* Thanh điều hướng: tô màu thẻ "Liên hệ" */
+nav ul li:nth-child(5) a {
+  background: #F4D2D6;
+  color: #E31837;
+  border-radius: 10px 10px 0 0;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Nút liên hệ */
+.contact-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  color: #dc3545;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-btn:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-form hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0 20px;
+}
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+.form-row input {
+  flex: 1;
+}
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #212529;
+  font-size: 15px;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #86b7fe;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.25);
+}
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+.submit-btn {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center;
+  transition: 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #bb2d3b;
+}
+
+/* FAQ */
+.faq-section {
+  max-width: 900px;
+  margin: 60px auto;
+  font-family: 'Poppins', sans-serif;
+}
+.faq-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+}
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-header {
+  background: #fff;
+  padding: 18px 20px;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+.faq-header::after {
+  content: "▾";
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  color: #666;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.faq-content {
+  display: none;
+  padding: 18px 20px;
+  font-size: 15px;
+  color: #444;
+  border-top: 1px solid #eee;
+  background: #fff;
+  line-height: 1.6;
+}
+.faq-item.active .faq-header {
+  background: #e8f0fe;
+  color: #000;
+  font-weight: 600;
+}
+.faq-item.active .faq-header::after {
+  transform: rotate(180deg);
+  color: #000;
+}
+.faq-item.active .faq-content {
+  display: block;
+}
+.faq-header:hover {
+  background: #f9f9f9;
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+  .contact-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: left;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+    padding: 10px;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
