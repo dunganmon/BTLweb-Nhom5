@@ -5,7 +5,7 @@
     if (!nav) return;
 
     // nút "Thực đơn"
-    const trigger = nav.querySelector('ul > li > a[href*="pages/menu.html"]');
+    const trigger = nav.querySelector('ul > li > a[href*="menu.html"]');
     if (!trigger) return;
     const li = trigger.parentElement;
 

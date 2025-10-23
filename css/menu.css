@@ -49,7 +49,7 @@ body.has-sticky-menu {
 .menu-content {
     width: 100%;
     max-width: 100%;
-    background-image: url(/images/menu-img/backgr-top.png), url(/images/menu-img/backgr-bottom.png);
+    background-image: url(../images/menu-img/backgr-top.png), url(../images/menu-img/backgr-bottom.png);
     background-repeat: no-repeat, no-repeat;
     background-position: center top, center calc(100% - 80px);
     background-size: 100% auto, 100% auto;

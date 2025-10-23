@@ -88,6 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Quay lại trang đăng nhập
-    window.location.href = "/pages/login.html";
+    window.location.href = "login.html";
   });
 });
