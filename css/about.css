@@ -102,53 +102,54 @@ nav ul li:nth-child(2) a {
   font-size: 36px; 
 }
 
-@media (max-width: 992px) and (min-width: 769px) {
- h2 {
-    font-size: 36px;
-    text-align: center;
+@media (max-width: 1120px) {
+  .container { padding: 0 18px; }
+
+  h2 { font-size: 36px; }
+
+  .history { padding: 40px 30px; }
+  .history-content { gap: 24px; }
+  .history-logo img { width: 360px; max-width: 100%; }
+  .history-text { max-width: 100%; }
+
+  .history-gallery { gap: 12px; }
+  .history-gallery img { width: 24%; }
+
+  .junlyy-vn { padding: 32px 0; }
+
+  .values-mission {
+    grid-template-columns: 1fr 1fr; 
+    gap: 24px;
+    padding: 32px;
   }
-  .history {
-    padding: 40px 25px;
-  }
-  .history-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .history-logo img {
-    width: 300px;
-    max-width: 100%;
-  }
-  .history-text {
-    text-align: justify;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  .history-gallery {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  .history-gallery img {
-    width: 24%;
-    border-radius: 8px;
-  }
-  .junlyy-vn {
-    padding: 30px 10px;
-  }
-  .junlyy-vn p {
-    font-size: 0.95em;
-    line-height: 1.6;
-  }
+  .values li { padding: 10px; }
+  .mission em strong { font-size: 30px; }
+}
+
+
+@media (max-width: 800px) {
+  .container { padding: 0 12px; }
+
+  h2 { font-size: 28px; text-align: center; }
+
+  .history { padding: 24px 16px; border-radius: 12px; }
+  .history-content { flex-direction: column; gap: 18px; text-align: center; }
+  .history-logo img { width: 260px; max-width: 100%; }
+  .history-text { text-align: justify; margin: 0 auto; }
+
+  .history-gallery { flex-wrap: wrap; gap: 10px; }
+  .history-gallery img { width: calc(50% - 5px); } 
+
+  .junlyy-vn { padding: 24px 0; }
+  .junlyy-vn p { font-size: 0.95em; line-height: 1.6; }
+
   .values-mission {
     grid-template-columns: 1fr;
-    padding: 30px 20px;
-    gap: 25px;
+    gap: 16px;
+    padding: 24px 16px;
   }
-  .values li {
-    font-size: 1em;
-    padding: 12px;
-  }
-  .mission em strong {
-    font-size: 30px;
-  }
+  .values li { font-size: 0.95em; padding: 10px; }
+
+  .store img { width: 100%; }
+  .mission em strong { font-size: 24px; }
 }

@@ -302,7 +302,7 @@ nav ul li:nth-child(1) a {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1120px) {
   .dots { bottom: 14px; gap: 8px; }
   .dot { width: 16px; height: 16px; }
 

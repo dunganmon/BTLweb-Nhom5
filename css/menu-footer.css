@@ -53,6 +53,33 @@ body {
     font-weight: bold;
 }
 
+/*phần css của cái trạng thái đã đăng nhập*/
+.user-info #welcomeText {
+  padding: 4px 10px;
+}
+.user-info {
+  padding: 5px 10px;         
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#logoutBtn {
+  background: linear-gradient(90deg, #e4002b, #ff3333);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#logoutBtn:hover {
+  transform: translateY(-1px);
+  scale: 1.03;
+}
+/**/
 nav {
     background-color: #E31837;
     display: flex;
@@ -259,7 +286,88 @@ footer ul li a:hover {
     }
 }
 
-@media screen and (max-width: 1120px) {}
+
+@media (max-width: 1120px) {
+  /* Top-bar full width, không bo góc để không lộ nền trắng */
+  .top-bar{
+    left: 0; right: 0; width: 100%;
+    border-bottom-left-radius: 0 !important;
+    height: 40px; padding: 0 16px;
+    justify-content: flex-end;
+  }
+
+  /* Chỉ cần chừa đúng 40px cho topbar */
+  body, body.has-sticky-menu { padding-top: 40px !important; }
+
+  /* Nav chuyển vào luồng (không fixed) để dropdown đẩy nội dung xuống */
+  #mainNav{
+    position: static !important;
+    top: auto !important; left: auto !important; right: auto !important;
+    max-height: none !important; box-shadow: none !important;
+    background: #E31837;
+    margin: 0; overflow: visible;
+  }
+
+  #mainNav .logo{ display:flex; justify-content:center; padding:10px 0; }
+  #mainNav img{ height: 76px; }
+
+  #mainNav ul{
+    display:flex; flex-direction:column; width:100%; padding:0;
+  }
+  #mainNav ul li{
+    display:flex; flex-direction:column; width:100%;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+  }
+  #mainNav ul li a{
+    display:block; width:100%;
+    padding:14px 20px; font-size:16px;
+    text-align:left; color:#fff !important;
+    background: transparent !important; border-radius:0 !important;
+  }
+  #mainNav ul li a:hover{ background: rgba(255,255,255,.12) !important; }
+
+  /* TẮT hành vi desktop: hover mở dropdown + luôn hiển thị */
+  nav ul li:hover .dropdown-menu{ display:none !important; }       /* gốc mở theo hover:contentReference[oaicite:3]{index=3} */
+  nav ul li .dropdown-menu{ display:none !important; }             /* gốc để block:contentReference[oaicite:4]{index=4} */
+  .dropdown-menu{ display:none !important; }                       /* gốc !important:contentReference[oaicite:5]{index=5} */
+
+  /* Dropdown trong luồng, chỉ hiện khi "mở" (JS sẽ thêm class .open) */
+  #mainNav .dropdown-menu{
+    position: static !important;
+    width:100% !important; transform:none !important;
+    background:#F4D2D6; padding:8px 0 !important;
+    border-radius:0 !important; box-shadow:none !important;
+    max-height:none !important; z-index:auto !important;
+  }
+  #mainNav li.open > .dropdown-menu{ display:block !important; }
+
+  /* Nội dung dropdown chỉ-CHỮ, căn giữa; ẩn ảnh */
+  #mainNav .dropdown-content{
+    display:flex !important; flex-direction:column;
+    align-items:center; gap:0; max-width:100%; margin:0;
+  }
+  #mainNav .dropdown-menu .menu-item img{ display:none !important; }
+  #mainNav .dropdown-menu .menu-item{
+    width:100%; border-bottom:1px dashed rgba(0,0,0,.08);
+  }
+  #mainNav .dropdown-menu .menu-item:last-child{ border-bottom:none; }
+  #mainNav .dropdown-menu .menu-item a{
+    display:flex !important; align-items:center; justify-content:center;
+    padding:12px 20px; text-decoration:none; color:#000;
+  }
+  #mainNav .dropdown-menu .menu-item span{
+    font-size:14px !important; font-weight:700; text-transform:uppercase;
+    text-align:center; white-space:normal; color:#000;
+  }
+
+  /* Tránh khoảng trắng/giật do rule cũ */
+  .carousel{ margin-top: 0 !important; } /* gốc có -40px margin-top:contentReference[oaicite:6]{index=6} */
+
+   nav .dropdown-menu .menu-item.active-menu span {
+    color: #E31837 !important;
+  }
+}
+
 
 @media screen and (max-width: 800px) {
     .footer-container {

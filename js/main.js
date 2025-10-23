@@ -39,3 +39,6 @@ dots.forEach((dot, i) => {
 
 interval = setInterval(nextSlide, 3000);
 
+
+
+
