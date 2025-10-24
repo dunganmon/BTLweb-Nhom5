@@ -308,7 +308,7 @@ footer ul li a:hover {
     margin: 0; overflow: visible;
   }
 
-  #mainNav .logo{ display:flex; justify-content:center; padding:10px 0; }
+  #mainNav .logo{ display:none; }
   #mainNav img{ height: 76px; }
 
   #mainNav ul{
