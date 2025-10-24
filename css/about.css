@@ -112,10 +112,14 @@ nav ul li:nth-child(2) a {
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
+.mission {
+    grid-column: 1 / -1; 
+    text-align: center;  
+    margin-top: 30px;
+}
 .mission em strong {
   font-size: 36px; 
 }
-
 @media (max-width: 1120px) {
   .container { padding: 0 18px; }
 
