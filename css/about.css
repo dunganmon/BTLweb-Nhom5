@@ -69,8 +69,22 @@ nav ul li:nth-child(2) a {
 }
 /* Junlyy tại VN */
 .junlyy-vn {
-    text-align: center;
-    padding: 40px 0;
+  background: #fff5f5;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(230, 0, 18, 0.08);
+  text-align: center;
+  margin-top: 40px;
+}
+.junlyy-vn h2 {
+  margin-bottom: 20px;
+}
+
+.junlyy-vn p {
+  max-width: 900px;
+  margin: 0 auto 10px auto;
+  line-height: 1.8;
+  text-align: justify;
 }
 /* Giá trị & Sứ mệnh */
 .values-mission {
@@ -115,7 +129,12 @@ nav ul li:nth-child(2) a {
   .history-gallery { gap: 12px; }
   .history-gallery img { width: 24%; }
 
-  .junlyy-vn { padding: 32px 0; }
+  .junlyy-vn {
+    padding: 40px 30px;
+  }
+  .junlyy-vn p {
+    font-size: 0.97em;
+  }
 
   .values-mission {
     grid-template-columns: 1fr 1fr; 
@@ -140,9 +159,18 @@ nav ul li:nth-child(2) a {
   .history-gallery { flex-wrap: wrap; gap: 10px; }
   .history-gallery img { width: calc(50% - 5px); } 
 
-  .junlyy-vn { padding: 24px 0; }
-  .junlyy-vn p { font-size: 0.95em; line-height: 1.6; }
-
+ .junlyy-vn {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+  .junlyy-vn h2 {
+    font-size: 28px;
+  }
+  .junlyy-vn p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: justify;
+  }
   .values-mission {
     grid-template-columns: 1fr;
     gap: 16px;
