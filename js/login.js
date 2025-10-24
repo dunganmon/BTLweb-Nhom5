@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const username = document.getElementById("username");
   const password = document.getElementById("pass");
 
-  // ------------------- ĐĂNG NHẬP THỦ CÔNG -------------------
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
- // ---------------- GOOGLE LOGIN ----------------
 const googleBtn = document.querySelector(".social-btn.gg");
 if (googleBtn) {
   googleBtn.addEventListener("click", () => {
@@ -44,7 +42,6 @@ if (googleBtn) {
   });
 }
 
-// ---------------- FACEBOOK LOGIN ----------------
 const fbBtn = document.querySelector(".social-btn.fb");
 if (fbBtn) {
   fbBtn.addEventListener("click", () => {
