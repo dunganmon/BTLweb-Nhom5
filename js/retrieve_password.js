@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 🔹 Hàm đánh giá độ mạnh mật khẩu
+  //  Hàm đánh giá độ mạnh mật khẩu
   function checkPasswordStrength(password) {
     const hasUpper = /[A-Z]/.test(password);
     const hasLower = /[a-z]/.test(password);
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return "Trung bình";
   }
 
-  // 🔹 Cập nhật hiển thị độ mạnh
+  //  Cập nhật hiển thị độ mạnh
   if (strengthText) {
     newPass.addEventListener("input", () => {
       const s = checkPasswordStrength(newPass.value);
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🔹 Xử lý submit
+  //  Xử lý submit
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
