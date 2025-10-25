@@ -34,7 +34,7 @@
   // CSS gọn
   const css = document.createElement("style");
   css.textContent = `
-  .cart-btn{position:fixed;right:16px;bottom:16px;background:#E31837;color:#fff;border:0;padding:10px 14px;border-radius:8px;font-weight:700;z-index:9999}
+  .cart-btn{position:fixed;right:16px;bottom:16px;background:#FFD200;color:#black;border:0;padding:18px 22px;border-radius:8px;font-weight:700;font-size:20px;z-index:9999}
   .cart-panel{position:fixed;right:16px;bottom:64px;width:300px;max-height:60vh;overflow:auto;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);padding:10px;display:none;z-index:9999;font:14px system-ui}
   .row{display:flex;justify-content:space-between;align-items:center;margin:6px 0}
   .head .close{cursor:pointer}
