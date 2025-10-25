@@ -31,21 +31,11 @@
     </div>`;
   document.body.appendChild(box);
 
-  // CSS gọn
-  const css = document.createElement("style");
-  css.textContent = `
-  .cart-btn{position:fixed;right:16px;bottom:16px;background:#E31837;color:#fff;border:0;padding:10px 14px;border-radius:8px;font-weight:700;z-index:9999}
-  .cart-panel{position:fixed;right:16px;bottom:64px;width:300px;max-height:60vh;overflow:auto;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);padding:10px;display:none;z-index:9999;font:14px system-ui}
-  .row{display:flex;justify-content:space-between;align-items:center;margin:6px 0}
-  .head .close{cursor:pointer}
-  .item{display:flex;gap:6px;align-items:center;justify-content:space-between;border-top:1px solid #eee;padding:6px 0}
-  .name{font-weight:600}.price{color:#E31837;font-weight:700}
-  .qty{display:flex;align-items:center;gap:6px}
-  .qty button{width:24px;height:24px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer}
-  .rmv{border:0;background:#fff;color:#999;cursor:pointer;margin-left:6px}
-  .checkout,.place{width:100%;margin-top:6px;background:#E31837;color:#fff;border:0;border-radius:8px;padding:10px;font-weight:700;cursor:pointer}
-  .inp{width:100%;border:1px solid #ced4da;border-radius:6px;padding:8px;margin-top:6px}
-  `; document.head.appendChild(css);
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "../css/cart.css";  
+  document.head.appendChild(link);
+
 
   const $ = (sel,root=document)=>root.querySelector(sel);
   const list = $(".list", box), sumEl = $(".sum", box);
@@ -71,7 +61,7 @@
     sumEl.textContent = money(total(c)); syncBtn();
   }
 
-  // Thêm từ card
+
   function addFromCard(card){
     const name = card.querySelector(".title")?.textContent.trim()||"Món ăn";
     const price = num(card.querySelector(".price")?.textContent);
@@ -81,11 +71,10 @@
     set(c); render();
   }
 
-  // Sự kiện
+
   btn.onclick = ()=> box.style.display = box.style.display==="block" ? "none" : "block";
   closeBtn.onclick = ()=> box.style.display = "none";
 
-  // + / − / xóa
   list.addEventListener("click", e=>{
     const row = e.target.closest(".item"); if(!row) return;
     const id = row.dataset.id; const c = get(); const i = c.findIndex(x=>x.id===id); if(i<0) return;
@@ -95,13 +84,13 @@
     set(c); render();
   });
 
-  // Bắt bấm ĐẶT HÀNG trên menu
+
   document.addEventListener("click", e=>{
     const b = e.target.closest(".btn-order"); if(!b) return;
     const card = b.closest(".product-card"); if(card) addFromCard(card);
   });
 
-  // Thanh toán (yêu cầu đăng nhập)
+ 
   checkout.onclick = ()=>{
     if(get().length===0) return alert("Giỏ hàng đang trống");
     if(!user){ alert("Vui lòng đăng nhập để thanh toán"); location.href="login.html"; return; }
