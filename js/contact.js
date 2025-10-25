@@ -38,7 +38,8 @@ if (form) {
     }
   };
 }
-//FAQ
+
+
 document.querySelectorAll(".faq-header").forEach(header => {
   header.onclick = () => {
     const item = header.parentElement;
