@@ -1,9 +1,6 @@
 body {
-  font-family: 'Poppins', sans-serif;
   background: #fffaf6;
   color: #333;
-  margin: 0;
-  padding: 0;
 }
 /*Thanh điều hướng: tô màu thẻ "Khuyến mãi"*/
 nav ul li:nth-child(4) a {
@@ -11,8 +8,10 @@ nav ul li:nth-child(4) a {
   color: #E31837;
   border-radius: 10px 10px 0 0;
 }
+.delivery {
+  margin-top: -40px;
+}
 .delivery img {
-  margin-top: 100px;
   width: 100%;
   display: block;
 }
@@ -69,32 +68,42 @@ header h1 {
   line-height: 1.5;
 }
 
-@media (max-width: 992px) and (min-width: 769px) {
-  header {
-    margin: 50px 0 25px;
+
+@media (max-width: 1120px) {
+  .delivery {
+    margin-top: 0;
   }
-  header h1 {
-    font-size: 36px;
-  }
+  header { margin: 40px 0 20px; }
+  header h1 { font-size: 2.1em; }
+
   .promo-container {
-    gap: 25px;
-    padding: 30px;
-    justify-content: center;
+    gap: 20px;
+    padding: 24px;
   }
   .promo-card {
-    width: 280px;
-    border-radius: 15px;
+    width: 300px;
+    border-radius: 16px;
   }
-  .promo-card img {
-    height: 200px;
+  .promo-card img { height: 200px; }
+}
+
+@media (max-width: 600px) {
+  header { margin: 28px 0 14px; }
+  header h1 { font-size: 1.8em; }
+
+  .promo-container {
+    padding: 16px;
+    gap: 30px;
   }
-  .promo-content h2 {
-    font-size: 30px;
+  .promo-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 14px;
   }
-  .promo-content p {
-    font-size: 28px;
-  }
-  .delivery img {
-    margin-top: 80px;
-  }
+  .promo-card:hover { transform: none; }
+  .promo-card img { height: 185px; }
+  .promo-content { padding: 16px; }
+  .promo-content h2 { font-size: 1.1em; }
+  .promo-content p { font-size: .92em; }
 }
