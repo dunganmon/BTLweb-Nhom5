@@ -140,6 +140,7 @@ textarea {
   border-top: 1px solid #eee;
   background: #fff;
   line-height: 1.6;
+  text-align: left;
 }
 .faq-item.active .faq-header {
   background: #e8f0fe;
