@@ -71,17 +71,6 @@ body.has-sticky-menu {
     align-items: stretch;
 }
 
-@media (max-width: 1100px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Card món ăn */
 .product-card {
@@ -209,14 +198,26 @@ body.has-sticky-menu {
 }
 
 
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+     
+}
 
-
-@media screen and (max-width: 600px) {
+@media (max-width: 650px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-item {
+        width: 40%;
+    }
     .menu-item img {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width:  70px;
     }
     .menu-item span {
         font-size: 12px;
     }
 }
+
