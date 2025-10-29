@@ -1,110 +1,228 @@
-// js/cart.js - mini + gắn tài khoản
 (() => {
-  const user = JSON.parse(localStorage.getItem("currentUser")||"null");
-  const KEY  = `cart:${user?.email||"guest"}`;
-  const get  = (k=KEY)=>JSON.parse(localStorage.getItem(k)||"[]");
-  const set  = (v,k=KEY)=>localStorage.setItem(k, JSON.stringify(v));
-  const money= n=> (n||0).toLocaleString("vi-VN")+" đ";
-  const num  = s=>parseInt(String(s||"").replace(/[^\d]/g,""))||0;
-
-  // Gộp giỏ guest -> tài khoản lần đầu đăng nhập
-  if (user) {
-    const guest = get("cart:guest");
-    if (guest.length && !localStorage.getItem(KEY)) { set(guest); localStorage.removeItem("cart:guest"); }
+  function getCurrentUser() {
+    try {
+      return JSON.parse(localStorage.getItem("currentUser") || "null");
+    } catch {
+      return null;
+    }
   }
 
-  // Nút + Panel
-  const btn = document.createElement("button");
-  btn.className = "cart-btn"; btn.textContent = "🛒 0"; document.body.appendChild(btn);
-  const box = document.createElement("div");
-  box.className = "cart-panel";
-  box.innerHTML = `
-    <div class="row head"><b>Giỏ hàng</b><span class="close">✕</span></div>
+  function cartKeyForUser(user) {
+    return `cart:${user?.email || "guest"}`;
+  }
+
+  function readCart(k = KEY) {
+    try {
+      return JSON.parse(localStorage.getItem(k) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function writeCart(cart, k = KEY) {
+    localStorage.setItem(k, JSON.stringify(cart));
+  }
+
+  function formatVND(n) {
+    return (n || 0).toLocaleString("vi-VN") + " đ";
+  }
+
+  function parsePriceText(s) {
+    return parseInt(String(s || "").replace(/[^\d]/g, "")) || 0;
+  }
+
+  function calcTotal(cart) {
+    return cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+  }
+
+  function calcTotalQty(cart) {
+    return cart.reduce((sum, item) => sum + item.qty, 0);
+  }
+
+  const user = getCurrentUser();
+  const KEY = cartKeyForUser(user);
+
+  if (user) {
+    const guestCart = readCart("cart:guest");
+    const hasGuestItems = guestCart.length > 0;
+    const userHasCart = Boolean(localStorage.getItem(KEY));
+    if (hasGuestItems && !userHasCart) {
+      writeCart(guestCart);
+      localStorage.removeItem("cart:guest");
+    }
+  }
+
+  const cartBtn = document.createElement("button");
+  cartBtn.className = "cart-btn";
+  cartBtn.textContent = "🛒 0";
+  document.body.appendChild(cartBtn);
+
+  const panel = document.createElement("div");
+  panel.className = "cart-panel";
+  panel.innerHTML = `
+    <div class="row head">
+      <b>Giỏ hàng</b>
+      <span class="close">✕</span>
+    </div>
     <div class="list"></div>
-    <div class="row"><span>Tổng:</span><b class="sum">0 đ</b></div>
-    <button class="checkout">Thanh toán</button>
+    <div class="row">
+      <span>Tổng:</span>
+      <b class="sum">0 đ</b>
+    </div>
+    <button class="checkout">Thanh toán khi nhận hàng</button>
     <div class="pay" style="display:none;margin-top:8px">
       <input class="inp name" placeholder="Họ tên *">
       <input class="inp phone" placeholder="SĐT *">
       <textarea class="inp addr" rows="2" placeholder="Địa chỉ *"></textarea>
       <button class="place">Giao</button>
-    </div>`;
-  document.body.appendChild(box);
+    </div>
+  `;
+  document.body.appendChild(panel);
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "../css/cart.css";  
+  link.href = "../css/cart.css";
   document.head.appendChild(link);
 
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const listEl = $(".list", panel);
+  const sumEl = $(".sum", panel);
+  const closeEl = $(".close", panel);
+  const checkoutEl = $(".checkout", panel);
+  const payBox = $(".pay", panel);
+  const nameI = $(".name", panel);
+  const phoneI = $(".phone", panel);
+  const addrI = $(".addr", panel);
+  const placeEl = $(".place", panel);
 
-  const $ = (sel,root=document)=>root.querySelector(sel);
-  const list = $(".list", box), sumEl = $(".sum", box);
-  const closeBtn = $(".close", box), checkout = $(".checkout", box);
-  const pay = $(".pay", box), nameI = $(".name", box), phoneI = $(".phone", box), addrI = $(".addr", box);
+  function syncCartButton() {
+    const cart = readCart();
+    cartBtn.textContent = `🛒 ${calcTotalQty(cart)}`;
+  }
 
-  function syncBtn(){ const c=get(); btn.textContent = `🛒 ${c.reduce((a,i)=>a+i.qty,0)}`; }
-  function total(c){ return c.reduce((a,i)=>a+i.qty*i.price,0); }
-
-  function render(){
-    const c = get();
-    list.innerHTML = c.length ? c.map(i=>`
-      <div class="item" data-id="${i.id}">
+  function renderItemRow(item) {
+    return `
+      <div class="item" data-id="${item.id}">
         <div style="flex:1">
-          <div class="name">${i.name}</div>
-          <div class="price">${money(i.price)}</div>
+          <div class="name">${item.name}</div>
+          <div class="price">${formatVND(item.price)}</div>
         </div>
         <div class="qty">
-          <button class="dec">-</button><span>${i.qty}</span><button class="inc">+</button>
+          <button class="dec">-</button>
+          <span>${item.qty}</span>
+          <button class="inc">+</button>
           <button class="rmv">xóa</button>
         </div>
-      </div>`).join("") : `<div style="padding:10px;color:#666;text-align:center">Giỏ hàng trống</div>`;
-    sumEl.textContent = money(total(c)); syncBtn();
+      </div>
+    `;
   }
 
+  function renderCart() {
+    const cart = readCart();
+    listEl.innerHTML = cart.length
+      ? cart.map(renderItemRow).join("")
+      : `<div style="padding:10px;color:#666;text-align:center">Giỏ hàng trống</div>`;
+    sumEl.textContent = formatVND(calcTotal(cart));
+    syncCartButton();
+  }
 
-  function addFromCard(card){
-    const name = card.querySelector(".title")?.textContent.trim()||"Món ăn";
-    const price = num(card.querySelector(".price")?.textContent);
+  function addFromProductCard(cardEl) {
+    const name = cardEl.querySelector(".title")?.textContent.trim() || "Món ăn";
+    const price = parsePriceText(cardEl.querySelector(".price")?.textContent);
     const id = name.toLowerCase();
-    const c = get(); const i = c.findIndex(x=>x.id===id);
-    if(i>=0) c[i].qty++; else c.push({id,name,price,qty:1});
-    set(c); render();
+    const cart = readCart();
+    const idx = cart.findIndex((it) => it.id === id);
+    if (idx >= 0) {
+      cart[idx].qty++;
+    } else {
+      cart.push({ id, name, price, qty: 1 });
+    }
+    writeCart(cart);
+    renderCart();
   }
 
+  function handleListClick(e) {
+    const row = e.target.closest(".item");
+    if (!row) return;
+    const id = row.dataset.id;
+    const cart = readCart();
+    const idx = cart.findIndex((it) => it.id === id);
+    if (idx < 0) return;
+    const t = e.target;
+    if (t.classList.contains("inc")) {
+      cart[idx].qty++;
+    } else if (t.classList.contains("dec")) {
+      cart[idx].qty = Math.max(1, cart[idx].qty - 1);
+    } else if (t.classList.contains("rmv")) {
+      cart.splice(idx, 1);
+    } else {
+      return;
+    }
+    writeCart(cart);
+    renderCart();
+  }
 
-  btn.onclick = ()=> box.style.display = box.style.display==="block" ? "none" : "block";
-  closeBtn.onclick = ()=> box.style.display = "none";
+  function handleDocumentClick(e) {
+    const btnOrder = e.target.closest(".btn-order");
+    if (!btnOrder) return;
+    const card = btnOrder.closest(".product-card");
+    if (card) addFromProductCard(card);
+  }
 
-  list.addEventListener("click", e=>{
-    const row = e.target.closest(".item"); if(!row) return;
-    const id = row.dataset.id; const c = get(); const i = c.findIndex(x=>x.id===id); if(i<0) return;
-    if(e.target.classList.contains("inc")) c[i].qty++;
-    else if(e.target.classList.contains("dec")) c[i].qty=Math.max(1,c[i].qty-1);
-    else if(e.target.classList.contains("rmv")) c.splice(i,1);
-    set(c); render();
-  });
+  function handleCheckoutClick() {
+    const cart = readCart();
+    if (cart.length === 0) {
+      alert("Giỏ hàng đang trống");
+      return;
+    }
+    if (!user) {
+      alert("Vui lòng đăng nhập để thanh toán");
+      location.href = "login.html";
+      return;
+    }
+    payBox.style.display = "block";
+    nameI.value = user.name || "";
+    phoneI.value = user.phone || "";
+  }
 
+  function handlePlaceOrder() {
+    const name = nameI.value.trim();
+    const phone = phoneI.value.trim();
+    const addr = addrI.value.trim();
+    if (!name || !phone || !addr) {
+      alert("Nhập đủ họ tên, SĐT, địa chỉ");
+      return;
+    }
+    const safeAddr = addr.replace(/</g, "&lt;");
+    listEl.innerHTML = `
+      <div style="padding:12px;text-align:center">
+        Đang giao hàng đến: <b>${safeAddr}</b>...
+      </div>
+    `;
+    sumEl.textContent = formatVND(0);
+    writeCart([]);
+    syncCartButton();
+    setTimeout(() => {
+      alert("Đặt hàng thành công!");
+      panel.style.display = "none";
+      payBox.style.display = "none";
+      nameI.value = phoneI.value = addrI.value = "";
+      renderCart();
+    }, 1200);
+  }
 
-  document.addEventListener("click", e=>{
-    const b = e.target.closest(".btn-order"); if(!b) return;
-    const card = b.closest(".product-card"); if(card) addFromCard(card);
-  });
-
- 
-  checkout.onclick = ()=>{
-    if(get().length===0) return alert("Giỏ hàng đang trống");
-    if(!user){ alert("Vui lòng đăng nhập để thanh toán"); location.href="login.html"; return; }
-    pay.style.display="block";
-    nameI.value = user.name||""; phoneI.value = user.phone||"";
+  cartBtn.onclick = () => {
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
   };
 
-  $(".place", box).onclick = ()=>{
-    if(!nameI.value.trim()||!phoneI.value.trim()||!addrI.value.trim()) return alert("Nhập đủ họ tên, SĐT, địa chỉ");
-    list.innerHTML = `<div style="padding:12px;text-align:center">Đang giao hàng đến: <b>${addrI.value.replace(/</g,"&lt;")}</b>...</div>`;
-    sumEl.textContent = money(0);
-    set([]); syncBtn();
-    setTimeout(()=>{ alert("Đặt hàng thành công!"); box.style.display="none"; pay.style.display="none"; nameI.value=phoneI.value=addrI.value=""; render(); }, 1200);
+  closeEl.onclick = () => {
+    panel.style.display = "none";
   };
 
-  render();
+  listEl.addEventListener("click", handleListClick);
+  document.addEventListener("click", handleDocumentClick);
+  checkoutEl.onclick = handleCheckoutClick;
+  placeEl.onclick = handlePlaceOrder;
+
+  renderCart();
 })();
